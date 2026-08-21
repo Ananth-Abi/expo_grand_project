@@ -42,7 +42,9 @@ function GalleryColumn({ items, direction }) {
       <div className={`hero__gallery-track hero__gallery-track--${direction}`}>
         {doubled.map((item, i) => (
           <div className="hero__gallery-tile" key={`${item.label}-${i}`}>
-            <PlaceholderImage icon={item.icon} label={item.label} tone={item.tone} />
+            <div className="hero__gallery-tile-inner">
+              <PlaceholderImage icon={item.icon} label={item.label} tone={item.tone} />
+            </div>
           </div>
         ))}
       </div>

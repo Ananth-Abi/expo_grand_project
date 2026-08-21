@@ -140,7 +140,6 @@
   height: 100%;
   overflow: hidden;
   border-radius: 14px;
-  perspective: 700px;
   /* Fades tiles smoothly to nothing at the top/bottom instead of a hard
      crop — the "disappearing" edge. */
   mask-image: linear-gradient(
@@ -179,23 +178,34 @@
 }
 
 .hero__gallery-tile {
+  position: relative;
   height: 190px;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   flex-shrink: 0;
   box-shadow: 0 16px 34px -20px rgba(0, 0, 0, 0.6);
-  /* Each tile leans slightly, alternating direction, so the column
-     reads as a gently bent surface rather than a flat stack. */
-  transform: perspective(700px) rotateX(4deg);
+  /* Skews the container itself into a parallelogram — top-left and
+     bottom-right corners stretch out along the diagonal. */
+  transform: skew(-4deg, -4deg);
   transition: transform 0.4s ease;
 }
 
-.hero__gallery-tile:nth-child(even) {
-  transform: perspective(700px) rotateX(-4deg);
+.hero__gallery-tile-inner {
+  position: absolute;
+  inset: -12%;
+  /* Counter-skew so the photo/icon inside reads upright and normal —
+     only the container's outline is bent. Oversized to cover the
+     corners the skew would otherwise expose. */
+  transform: skew(4deg, 4deg);
+  transition: transform 0.4s ease;
 }
 
 .hero__gallery-col:hover .hero__gallery-tile {
-  transform: perspective(700px) rotateX(0deg);
+  transform: skew(0deg, 0deg);
+}
+
+.hero__gallery-col:hover .hero__gallery-tile-inner {
+  transform: skew(0deg, 0deg);
 }
 
 @keyframes hero-marquee-up {
