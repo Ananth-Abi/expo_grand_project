@@ -135,32 +135,28 @@
   gap: 16px;
 }
 
-.hero__gallery::before,
-.hero__gallery::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 70px;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.hero__gallery::before {
-  top: 0;
-  background: linear-gradient(to bottom, #171615, transparent);
-}
-
-.hero__gallery::after {
-  bottom: 0;
-  background: linear-gradient(to top, #171615, transparent);
-}
-
 .hero__gallery-col {
   position: relative;
   height: 100%;
   overflow: hidden;
   border-radius: 14px;
+  perspective: 700px;
+  /* Fades tiles smoothly to nothing at the top/bottom instead of a hard
+     crop — the "disappearing" edge. */
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
 }
 
 .hero__gallery-track {
@@ -188,6 +184,18 @@
   overflow: hidden;
   flex-shrink: 0;
   box-shadow: 0 16px 34px -20px rgba(0, 0, 0, 0.6);
+  /* Each tile leans slightly, alternating direction, so the column
+     reads as a gently bent surface rather than a flat stack. */
+  transform: perspective(700px) rotateX(4deg);
+  transition: transform 0.4s ease;
+}
+
+.hero__gallery-tile:nth-child(even) {
+  transform: perspective(700px) rotateX(-4deg);
+}
+
+.hero__gallery-col:hover .hero__gallery-tile {
+  transform: perspective(700px) rotateX(0deg);
 }
 
 @keyframes hero-marquee-up {
