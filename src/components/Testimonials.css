@@ -1,0 +1,107 @@
+.testimonials {
+  background: var(--charcoal);
+}
+
+.testimonials .eyebrow {
+  color: var(--gold-light);
+}
+
+.testimonials .eyebrow::before {
+  background: var(--gold-light);
+}
+
+.testimonials .section-title {
+  color: var(--white);
+}
+
+.testimonials .section-sub {
+  color: rgba(253, 253, 251, 0.6);
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: rgba(253, 253, 251, 0.04);
+  border: 1px solid rgba(253, 253, 251, 0.1);
+  border-radius: 10px;
+  padding: 38px 32px;
+  transition: border-color 0.35s ease, transform 0.35s ease;
+}
+
+.testimonial-card:hover {
+  border-color: rgba(201, 162, 39, 0.4);
+  transform: translateY(-6px);
+}
+
+.testimonial-card__quote-icon {
+  color: var(--gold);
+  font-size: 1.3rem;
+  opacity: 0.6;
+  margin-bottom: 18px;
+}
+
+.testimonial-card__stars {
+  display: flex;
+  gap: 4px;
+  color: var(--gold-light);
+  font-size: 0.8rem;
+  margin-bottom: 18px;
+}
+
+.testimonial-card__text {
+  color: rgba(253, 253, 251, 0.82);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 28px;
+  min-height: 130px;
+}
+
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.testimonial-card__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.testimonial-card__author div {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card__author strong {
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+.testimonial-card__author span {
+  color: rgba(253, 253, 251, 0.5);
+  font-size: 0.78rem;
+  margin-top: 2px;
+}
+
+@media (max-width: 980px) {
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+  .testimonial-card__text {
+    min-height: auto;
+  }
+}

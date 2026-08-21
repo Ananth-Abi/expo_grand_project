@@ -1,0 +1,109 @@
+.floor-plans {
+  background: var(--white);
+}
+
+.floor-plans__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+}
+
+.floor-plans__tab {
+  padding: 12px 26px;
+  border: 1px solid var(--gray-light);
+  background: transparent;
+  border-radius: 30px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--charcoal-soft);
+  transition: all 0.3s ease;
+}
+
+.floor-plans__tab:hover {
+  border-color: var(--gold);
+  color: var(--charcoal);
+}
+
+.floor-plans__tab.is-active {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+  border-color: transparent;
+  color: var(--white);
+  box-shadow: 0 10px 24px -10px rgba(201, 162, 39, 0.6);
+}
+
+.floor-plans__card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -34px rgba(38, 37, 36, 0.4);
+}
+
+.floor-plans__media {
+  aspect-ratio: 4 / 3;
+}
+
+.floor-plans__info {
+  background: var(--gray-light);
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.floor-plans__info h3 {
+  font-size: 1.7rem;
+  margin-bottom: 6px;
+}
+
+.floor-plans__type {
+  color: var(--gold-dark);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 26px;
+}
+
+.floor-plans__specs {
+  display: flex;
+  gap: 26px;
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+}
+
+.floor-plans__specs div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--charcoal-soft);
+}
+
+.floor-plans__specs svg {
+  color: var(--gold-dark);
+}
+
+.floor-plans__price {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  color: var(--charcoal);
+  margin-bottom: 28px;
+}
+
+.floor-plans__info .btn {
+  align-self: flex-start;
+}
+
+@media (max-width: 780px) {
+  .floor-plans__card {
+    grid-template-columns: 1fr;
+  }
+  .floor-plans__info {
+    padding: 34px 28px;
+  }
+}

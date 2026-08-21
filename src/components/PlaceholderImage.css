@@ -1,0 +1,52 @@
+.ph-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: rgba(253, 253, 251, 0.92);
+}
+
+.ph-image--gold {
+  background: linear-gradient(150deg, #3a3733, var(--charcoal) 45%, var(--gold-dark) 130%);
+}
+
+.ph-image--charcoal {
+  background: linear-gradient(150deg, #45423d, var(--charcoal) 60%, #17161533 130%);
+}
+
+.ph-image--green {
+  background: linear-gradient(150deg, #2f3b30, var(--charcoal) 55%, var(--green) 140%);
+}
+
+.ph-image--cream {
+  background: linear-gradient(150deg, #efe6c8, var(--gray-light) 55%, var(--gold-light) 140%);
+  color: var(--charcoal-soft);
+}
+
+.ph-image__pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(253, 253, 251, 0.09) 1px, transparent 1px);
+  background-size: 18px 18px;
+  opacity: 0.5;
+}
+
+.ph-image__icon {
+  position: relative;
+  font-size: 1.9rem;
+  opacity: 0.85;
+}
+
+.ph-image__label {
+  position: relative;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.85;
+}
