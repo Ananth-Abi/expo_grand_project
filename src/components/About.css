@@ -1,5 +1,5 @@
 .about {
-  background: var(--white);
+  background: var(--bg);
 }
 
 .about__grid {
@@ -49,14 +49,14 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding-top: 30px;
-  border-top: 1px solid var(--gray-light);
+  border-top: 1px solid var(--border);
 }
 
 .about__stat-value {
   display: block;
   font-family: var(--font-head);
   font-size: 1.9rem;
-  color: var(--gold-dark);
+  color: var(--accent);
   font-weight: 600;
 }
 
@@ -64,7 +64,7 @@
   display: block;
   margin-top: 6px;
   font-size: 0.75rem;
-  color: var(--charcoal-soft);
+  color: var(--text-soft);
   letter-spacing: 0.03em;
 }
 

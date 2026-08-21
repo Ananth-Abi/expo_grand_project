@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/expo_grand_logo.png";
+import ThemeToggle from "./ThemeToggle";
 import "./Navbar.css";
 
 const LINKS = [
@@ -44,6 +45,8 @@ export default function Navbar() {
           ))}
         </nav>
 
+        <ThemeToggle className="navbar__theme-toggle navbar__theme-toggle--desktop" />
+
         <a href="#contact" className="btn btn-gold navbar__cta">
           Book a Visit
         </a>
@@ -73,9 +76,12 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a href="#contact" className="btn btn-gold" onClick={handleLinkClick}>
-              Book a Visit
-            </a>
+            <div className="navbar__mobile-footer">
+              <a href="#contact" className="btn btn-gold" onClick={handleLinkClick}>
+                Book a Visit
+              </a>
+              <ThemeToggle className="navbar__theme-toggle--mobile" />
+            </div>
           </motion.nav>
         )}
       </AnimatePresence>
